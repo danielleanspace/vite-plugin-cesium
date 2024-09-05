@@ -42,7 +42,7 @@ export default function vitePluginCesium(options: VitePluginCesiumOptions = {}):
         if (base === '') base = './';
       }
       if (c.build?.outDir) {
-        if (c.root !== undefined) {
+        if (c.root !== undefined && path.isAbsolute(c.root)) {
           outDir = path.join(c.root, c.build.outDir);
         } else {
           outDir = c.build.outDir;
